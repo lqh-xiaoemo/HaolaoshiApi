@@ -1,0 +1,970 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Web</name>
+    </assembly>
+    <members>
+        <member name="T:Web.Autofac.AutofacExtension">
+            <summary> 
+             //配置autofac依赖注入
+             https://blog.csdn.net/yikeshu19900128/article/details/42741779
+            </summary>
+        </member>
+        <member name="M:Web.Controllers.ArticleController.Category(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            文章、课程所有分类
+            </summary>
+            <param name="where"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Web.Controllers.DefaultController">
+            <summary>
+            好老师。常用的接口
+            </summary>
+        </member>
+        <member name="M:Web.Controllers.DefaultController.Login(Common.Userinfo)">
+            <summary>
+            登录
+            </summary>
+            <param name="o">接收username、password、type三个参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.DefaultController.GetUserinfo">
+            <summary>
+            获取登录信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.DefaultController.ImgUpload(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            图片上传
+            </summary>
+            <param name="file"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.DefaultController.GetQRCode(System.String,System.Int32)">
+            <summary>
+            生成二维码图片
+            </summary>
+            <param name="text"></param>
+            <param name="size">生成二维码图片的像素大小</param>
+        </member>
+        <member name="M:Web.Controllers.DefaultController.AppUpdate(System.String,System.String)">
+            <summary>
+            APP更新检查
+            </summary>
+            <param name="appid"></param>
+            <param name="version"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Web.Controllers.MyBaseController">
+            <summary>
+            公共的属性、方法、变量
+            </summary>
+        </member>
+        <member name="M:Web.Controllers.MyBaseController.#ctor">
+            <summary>
+            身份信息
+            </summary>
+        </member>
+        <member name="M:Web.Controllers.Stu.DefaultController.Clock(System.String)">
+            <summary>
+            签到打卡
+            </summary>
+            <param name="answer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Teach.Controllers.StudentController.ClockList(System.String)">
+            <summary>
+            已签到学生列表
+            </summary>
+            <param name="classid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Teach.Controllers.StudentController.UnClockList(System.String)">
+            <summary>
+            查询未签到列表
+            </summary>
+            <param name="classid">班级id</param>
+            <returns>new { total= 总人数,items=未签到列表对象{username,realname }}</returns>
+        </member>
+        <member name="M:Web.Teach.Controllers.StudentController.Clock(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+             教师发起学生签到
+            </summary>
+            <param name="classid">班级id</param>
+            <param name="answer">签到问题答案</param>
+            <param name="expire">签到时长</param>
+            <param name="holdexpire">签到信息保留时间，默认签到时长（默认 60）+120秒，后签到信息自动删除</param>
+            <returns></returns>
+        </member>
+        <member name="T:Web.Extension.WebHostExtension">
+            <summary>
+            1、Add-Migration 版本名  //令创建迭代版本
+            2、Remove-Migration  删除迁移
+            </summary>
+        </member>
+        <member name="T:Web.Extension.ModelStateExtension">
+            <summary>
+            ModelState扩展类
+            </summary>
+        </member>
+        <member name="M:Web.Extension.ModelStateExtension.GetFirstErrMsg(Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary)">
+            <summary>
+            获取模型绑定中的第一条错误信息
+            </summary>
+            <param name="msDictionary"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Extension.ModelStateExtension.GetErrMsgList(Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary)">
+            <summary>
+             获取错误信息列表
+            </summary>
+            <param name="msDictionary"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Extension.ModelStateExtension.GetAllErrMsgStr(Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary,System.String)">
+            <summary>
+            获取ModelState所有错误信息，间隔符间隔
+            </summary>
+            <param name="msDictionary"></param>
+            <param name="splitStr">间隔符</param>
+            <returns></returns>
+        </member>
+        <member name="T:Web.Jwt.JwtAuthorizationFilter">
+            <summary>
+            授权中间件
+            </summary>
+        </member>
+        <member name="M:Web.Jwt.JwtAuthorizationFilter.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            
+            </summary>
+            <param name="next"></param>
+        </member>
+        <member name="M:Web.Jwt.JwtAuthorizationFilter.Invoke(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            
+            </summary>
+            <param name="httpContext"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Web.Jwt.JwtConfig">
+            <summary>
+            Jwt配置
+            </summary>
+        </member>
+        <member name="P:Web.Jwt.JwtConfig.Issuer">
+            <summary>
+            token是谁颁发的
+            </summary>
+        </member>
+        <member name="P:Web.Jwt.JwtConfig.Audience">
+            <summary>
+            token可以给那些客户端使用
+            </summary>
+        </member>
+        <member name="P:Web.Jwt.JwtConfig.SecretKey">
+            <summary>
+            安全密钥  加密的key（SecretKey必须大于16个,是大于，不是大于等于）
+            </summary>
+        </member>
+        <member name="P:Web.Jwt.JwtConfig.WebExp">
+            <summary>
+            Web端过期时间
+            </summary>
+        </member>
+        <member name="P:Web.Jwt.JwtConfig.AppExp">
+            <summary>
+            移动端过期时间
+            </summary>
+        </member>
+        <member name="P:Web.Jwt.JwtConfig.MiniProgramExp">
+            <summary>
+            小程序过期时间
+            </summary>
+        </member>
+        <member name="P:Web.Jwt.JwtConfig.OtherExp">
+            <summary>
+            其他端过期时间
+            </summary>
+        </member>
+        <member name="T:Web.Jwt.JwtHelper">
+            <summary>
+            Jwt帮助类
+            </summary>
+        </member>
+        <member name="M:Web.Jwt.JwtHelper.IssueJWT(Web.Jwt.Token,Web.Jwt.JwtConfig)">
+            <summary>
+            颁发JWT字符串
+            </summary>
+            <param name="tokenModel"></param>
+            <param name="jwtConfig"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Jwt.JwtHelper.SerializeJWT(System.String)">
+            <summary>
+            解析
+            </summary>
+            <param name="jwtStr"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Web.Jwt.Token">
+            <summary>
+            令牌
+            </summary>
+        </member>
+        <member name="P:Web.Jwt.Token.Uid">
+            <summary>
+            登录用户Id
+            </summary>
+        </member>
+        <member name="P:Web.Jwt.Token.Uname">
+            <summary>
+            登录用户名
+            </summary>
+        </member>
+        <member name="P:Web.Jwt.Token.Role">
+            <summary>
+            身份
+            </summary>
+        </member>
+        <member name="P:Web.Jwt.Token.Project">
+            <summary>
+            项目名称
+            </summary>
+        </member>
+        <member name="P:Web.Jwt.Token.TokenType">
+            <summary>
+            令牌类型（终端类型）
+            </summary>
+        </member>
+        <member name="T:Web.Jwt.TokenType">
+            <summary>
+            终端类型枚举
+            </summary>
+        </member>
+        <member name="T:Web.Redis.RedisConnectionHelp">
+            <summary>
+            ConnectionMultiplexer对象管理帮助类
+            </summary>
+        </member>
+        <member name="P:Web.Redis.RedisConnectionHelp.Instance">
+            <summary>
+            单例获取
+            </summary>
+        </member>
+        <member name="M:Web.Redis.RedisConnectionHelp.GetConnectionMultiplexer(System.String)">
+            <summary>
+            缓存获取
+            </summary>
+            <param name="connectionString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisConnectionHelp.MuxerConfigurationChanged(System.Object,StackExchange.Redis.EndPointEventArgs)">
+            <summary>
+            配置更改时
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Web.Redis.RedisConnectionHelp.MuxerErrorMessage(System.Object,StackExchange.Redis.RedisErrorEventArgs)">
+            <summary>
+            发生错误时
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Web.Redis.RedisConnectionHelp.MuxerConnectionRestored(System.Object,StackExchange.Redis.ConnectionFailedEventArgs)">
+            <summary>
+            重新建立连接之前的错误
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Web.Redis.RedisConnectionHelp.MuxerConnectionFailed(System.Object,StackExchange.Redis.ConnectionFailedEventArgs)">
+            <summary>
+            连接失败 ， 如果重新连接成功你将不会收到这个通知
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Web.Redis.RedisConnectionHelp.MuxerHashSlotMoved(System.Object,StackExchange.Redis.HashSlotMovedEventArgs)">
+            <summary>
+            更改集群
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Web.Redis.RedisConnectionHelp.MuxerInternalError(System.Object,StackExchange.Redis.InternalErrorEventArgs)">
+            <summary>
+            redis类库错误
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:Web.Redis.RedisHelper">
+            <summary>
+            Redis操作
+            </summary>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.StringSet(System.String,System.String,System.Nullable{System.TimeSpan})">
+            <summary>
+            保存单个key value
+            </summary>
+            <param name="key">Redis Key</param>
+            <param name="value">保存的值</param>
+            <param name="expiry">过期时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.StringSet(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue}})">
+            <summary>
+            保存多个key value
+            </summary>
+            <param name="keyValues">键值对</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.StringSet``1(System.String,``0,System.Nullable{System.TimeSpan})">
+            <summary>
+            保存一个对象
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <param name="obj"></param>
+            <param name="expiry"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.StringGet(System.String)">
+            <summary>
+            获取单个key的值
+            </summary>
+            <param name="key">Redis Key</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.StringGet(System.Collections.Generic.List{System.String})">
+            <summary>
+            获取多个Key
+            </summary>
+            <param name="listKey">Redis Key集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.StringGet``1(System.String)">
+            <summary>
+            获取一个key的对象
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.StringIncrement(System.String,System.Double)">
+            <summary>
+            为数字增长val
+            </summary>
+            <param name="key"></param>
+            <param name="val">可以为负</param>
+            <returns>增长后的值</returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.StringDecrement(System.String,System.Double)">
+            <summary>
+            为数字减少val
+            </summary>
+            <param name="key"></param>
+            <param name="val">可以为负</param>
+            <returns>减少后的值</returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.StringSetAsync(System.String,System.String,System.Nullable{System.TimeSpan})">
+            <summary>
+            保存单个key value
+            </summary>
+            <param name="key">Redis Key</param>
+            <param name="value">保存的值</param>
+            <param name="expiry">过期时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.StringSetAsync(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{StackExchange.Redis.RedisKey,StackExchange.Redis.RedisValue}})">
+            <summary>
+            保存多个key value
+            </summary>
+            <param name="keyValues">键值对</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.StringSetAsync``1(System.String,``0,System.Nullable{System.TimeSpan})">
+            <summary>
+            保存一个对象
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <param name="obj"></param>
+            <param name="expiry"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.StringGetAsync(System.String)">
+            <summary>
+            获取单个key的值
+            </summary>
+            <param name="key">Redis Key</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.StringGetAsync(System.Collections.Generic.List{System.String})">
+            <summary>
+            获取多个Key
+            </summary>
+            <param name="listKey">Redis Key集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.StringGetAsync``1(System.String)">
+            <summary>
+            获取一个key的对象
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.StringIncrementAsync(System.String,System.Double)">
+            <summary>
+            为数字增长val
+            </summary>
+            <param name="key"></param>
+            <param name="val">可以为负</param>
+            <returns>增长后的值</returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.StringDecrementAsync(System.String,System.Double)">
+            <summary>
+            为数字减少val
+            </summary>
+            <param name="key"></param>
+            <param name="val">可以为负</param>
+            <returns>减少后的值</returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.HashExists(System.String,System.String)">
+            <summary>
+            判断某个数据是否已经被缓存
+            </summary>
+            <param name="key"></param>
+            <param name="dataKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.HashSet``1(System.String,System.String,``0)">
+            <summary>
+            存储数据到hash表
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <param name="dataKey"></param>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.HashDelete(System.String,System.String)">
+            <summary>
+            移除hash中的某值
+            </summary>
+            <param name="key"></param>
+            <param name="dataKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.HashDelete(System.String,System.Collections.Generic.List{StackExchange.Redis.RedisValue})">
+            <summary>
+            移除hash中的多个值
+            </summary>
+            <param name="key"></param>
+            <param name="dataKeys"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.HashGet``1(System.String,System.String)">
+            <summary>
+            从hash表获取数据
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <param name="dataKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.HashIncrement(System.String,System.String,System.Double)">
+            <summary>
+            为数字增长val
+            </summary>
+            <param name="key"></param>
+            <param name="dataKey"></param>
+            <param name="val">可以为负</param>
+            <returns>增长后的值</returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.HashDecrement(System.String,System.String,System.Double)">
+            <summary>
+            为数字减少val
+            </summary>
+            <param name="key"></param>
+            <param name="dataKey"></param>
+            <param name="val">可以为负</param>
+            <returns>减少后的值</returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.HashKeys``1(System.String)">
+            <summary>
+            获取hashkey所有Redis key
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.HashExistsAsync(System.String,System.String)">
+            <summary>
+            判断某个数据是否已经被缓存
+            </summary>
+            <param name="key"></param>
+            <param name="dataKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.HashSetAsync``1(System.String,System.String,``0)">
+            <summary>
+            存储数据到hash表
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <param name="dataKey"></param>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.HashDeleteAsync(System.String,System.String)">
+            <summary>
+            移除hash中的某值
+            </summary>
+            <param name="key"></param>
+            <param name="dataKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.HashDeleteAsync(System.String,System.Collections.Generic.List{StackExchange.Redis.RedisValue})">
+            <summary>
+            移除hash中的多个值
+            </summary>
+            <param name="key"></param>
+            <param name="dataKeys"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.HashGeAsync``1(System.String,System.String)">
+            <summary>
+            从hash表获取数据
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <param name="dataKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.HashIncrementAsync(System.String,System.String,System.Double)">
+            <summary>
+            为数字增长val
+            </summary>
+            <param name="key"></param>
+            <param name="dataKey"></param>
+            <param name="val">可以为负</param>
+            <returns>增长后的值</returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.HashDecrementAsync(System.String,System.String,System.Double)">
+            <summary>
+            为数字减少val
+            </summary>
+            <param name="key"></param>
+            <param name="dataKey"></param>
+            <param name="val">可以为负</param>
+            <returns>减少后的值</returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.HashKeysAsync``1(System.String)">
+            <summary>
+            获取hashkey所有Redis key
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.ListRemove``1(System.String,``0)">
+            <summary>
+            移除指定ListId的内部List的值
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.ListRange``1(System.String)">
+            <summary>
+            获取指定key的List
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.ListRightPush``1(System.String,``0)">
+            <summary>
+            入队
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.ListRightPop``1(System.String)">
+            <summary>
+            出队
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.ListLeftPush``1(System.String,``0)">
+            <summary>
+            入栈
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.ListLeftPop``1(System.String)">
+            <summary>
+            出栈
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.ListLength(System.String)">
+            <summary>
+            获取集合中的数量
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.ListRemoveAsync``1(System.String,``0)">
+            <summary>
+            移除指定ListId的内部List的值
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.ListRangeAsync``1(System.String)">
+            <summary>
+            获取指定key的List
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.ListRightPushAsync``1(System.String,``0)">
+            <summary>
+            入队
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.ListRightPopAsync``1(System.String)">
+            <summary>
+            出队
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.ListLeftPushAsync``1(System.String,``0)">
+            <summary>
+            入栈
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.ListLeftPopAsync``1(System.String)">
+            <summary>
+            出栈
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.ListLengthAsync(System.String)">
+            <summary>
+            获取集合中的数量
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.SetAdd``1(System.String,``0)">
+            <summary>
+            添加
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.SetRemove``1(System.String,``0)">
+            <summary>
+            删除
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.SetMembers``1(System.String)">
+            <summary>
+            获取全部
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.SetLength(System.String)">
+            <summary>
+            获取集合中的数量
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.SetContains``1(System.String,``0)">
+            <summary>
+            包含
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.SetAddAsync``1(System.String,``0,System.Double)">
+            <summary>
+            添加
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <param name="score"></param>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.SetRemoveAsync``1(System.String,``0)">
+            <summary>
+            删除
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.SetMembersAsync``1(System.String)">
+            <summary>
+            获取全部
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.SetLengthAsync(System.String)">
+            <summary>
+            获取集合中的数量
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.SetContainsAsync``1(System.String,``0)">
+            <summary>
+            包含
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.SortedSetAdd``1(System.String,``0,System.Double)">
+            <summary>
+            添加
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <param name="score"></param>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.SortedSetRemove``1(System.String,``0)">
+            <summary>
+            删除
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.SortedSetRangeByRank``1(System.String)">
+            <summary>
+            获取全部
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.SortedSetLength(System.String)">
+            <summary>
+            获取集合中的数量
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.SortedSetContains``1(System.String,``0)">
+            <summary>
+            判断是否包含成员
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.SortedSetAddAsync``1(System.String,``0,System.Double)">
+            <summary>
+            添加
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <param name="score"></param>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.SortedSetRemoveAsync``1(System.String,``0)">
+            <summary>
+            删除
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.SortedSetRangeByRankAsync``1(System.String)">
+            <summary>
+            获取全部
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.SortedSetLengthAsync(System.String)">
+            <summary>
+            获取集合中的数量
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.SortedSetContainsAsync``1(System.String,``0)">
+            <summary>
+            判断是否包含成员
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.KeyDelete(System.String)">
+            <summary>
+            删除单个key
+            </summary>
+            <param name="key">redis key</param>
+            <returns>是否删除成功</returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.KeyDelete(System.Collections.Generic.List{System.String})">
+            <summary>
+            删除多个key
+            </summary>
+            <param name="keys">rediskey</param>
+            <returns>成功删除的个数</returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.KeyExists(System.String)">
+            <summary>
+            判断key是否存储
+            </summary>
+            <param name="key">redis key</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.KeyRename(System.String,System.String)">
+            <summary>
+            重新命名key
+            </summary>
+            <param name="key">就的redis key</param>
+            <param name="newKey">新的redis key</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.KeyExpire(System.String,System.Nullable{System.TimeSpan})">
+            <summary>
+            设置Key的时间
+            </summary>
+            <param name="key">redis key</param>
+            <param name="expiry"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.Subscribe(System.String,System.Action{StackExchange.Redis.RedisChannel,StackExchange.Redis.RedisValue})">
+            <summary>
+            Redis发布订阅  订阅
+            </summary>
+            <param name="subChannel"></param>
+            <param name="handler"></param>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.Publish``1(System.String,``0)">
+            <summary>
+            Redis发布订阅  发布
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="channel"></param>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.Unsubscribe(System.String)">
+            <summary>
+            Redis发布订阅  取消订阅
+            </summary>
+            <param name="channel"></param>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.UnsubscribeAll">
+            <summary>
+            Redis发布订阅  取消全部订阅
+            </summary>
+        </member>
+        <member name="M:Web.Redis.RedisHelper.SetSysCustomKey(System.String)">
+            <summary>
+            设置前缀
+            </summary>
+            <param name="customKey"></param>
+        </member>
+        <member name="P:Web.Security.ClaimsAccessor.Id">
+            <summary>
+            登录用户ID
+            </summary>
+        </member>
+        <member name="P:Web.Security.ClaimsAccessor.Role">
+            <summary>
+            用户角色
+            </summary>
+        </member>
+        <member name="P:Web.Security.IClaimsAccessor.Id">
+            <summary>
+            登录用户ID
+            </summary>
+        </member>
+        <member name="P:Web.Security.IClaimsAccessor.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Web.Security.IClaimsAccessor.Role">
+            <summary>
+            用户角色
+            </summary>
+        </member>
+        <member name="P:Web.Security.IClaimsAccessor.Project">
+            <summary>
+            其他身份
+            </summary>
+        </member>
+        <member name="T:Web.Util.OfficeHelper">
+            <summary>
+            Excel操作工具类
+            </summary>
+        </member>
+        <member name="M:Web.Util.OfficeHelper.ReadExcelToDataTable(System.String,System.String,System.Boolean)">
+            <summary>
+            将excel文件内容读取到DataTable数据表中
+            </summary>
+            <param name="fileName">文件完整路径名</param>
+            <param name="sheetName">指定读取excel工作薄sheet的名称</param>
+            <param name="isFirstRowColumn">第一行是否是DataTable的列名：true=是，false=否</param>
+            <returns>DataTable数据表</returns>
+        </member>
+        <member name="M:Web.Util.OfficeHelper.ReadExcelToDataTable(System.IO.Stream,System.String,System.Boolean)">
+            <summary>
+            将文件流读取到DataTable数据表中
+            </summary>
+            <param name="fileStream">文件流</param>
+            <param name="sheetName">指定读取excel工作薄sheet的名称</param>
+            <param name="isFirstRowColumn">第一行是否是DataTable的列名：true=是，false=否</param>
+            <returns>DataTable数据表</returns>
+        </member>
+        <member name="T:Web.Util.QRCodeHelper">
+            <summary>
+            二维码工具类
+            <see cref="!:https://github.com/codebude/QRCoder"/>
+            </summary>
+        </member>
+        <member name="M:Web.Util.QRCodeHelper.GetQRCode(System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="text">扫描二维码时显示的文本内容，如果是网址自动跳转</param>
+            <param name="pixel">像素</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

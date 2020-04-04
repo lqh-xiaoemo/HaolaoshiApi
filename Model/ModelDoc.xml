@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Model</name>
+    </assembly>
+    <members>
+        <member name="T:Model.Area">
+            <summary>
+            区域地址
+            </summary>
+        </member>
+        <member name="P:Model.Area.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Model.Article.Attach">
+            <summary>
+            附件，多个用“;”隔开
+            </summary>
+        </member>
+        <member name="P:Model.Article.Tag">
+            <summary>
+            标签，多个用“;”隔开
+            </summary>
+        </member>
+        <member name="T:Model.Category">
+            <summary>
+            文章、课程分类
+            </summary>
+        </member>
+        <member name="P:Model.Chapter.Attach">
+            <summary>
+            附件，多个用“;”隔开
+            </summary>
+        </member>
+        <member name="P:Model.Course.Attach">
+            <summary>
+            附件，多个用“;”隔开
+            </summary>
+        </member>
+        <member name="T:Model.CourseRes">
+            <summary>
+            课程资源 如段子 笑话  案例 教案 讲义等 主要供老师分享，学生也可提供案例等素材
+            </summary>
+        </member>
+        <member name="P:Model.CourseRes.Attach">
+            <summary>
+            附件，多个用“;”隔开
+            </summary>
+        </member>
+        <member name="P:Model.CourseRes.Tag">
+            <summary>
+            标签，多个用“;”隔开
+            </summary>
+        </member>
+        <member name="P:Model.Person.Role">
+            角色，可以多个角色。多个之间用,分割角色可以继承
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,59 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;1591;</NoWarn>
+    <DocumentationFile>D:\project\vs\Haolaoshi\Model\ModelDoc.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>D:\project\vs\Haolaoshi\Model\ModelDoc.xml</DocumentationFile>
+    <NoWarn>1701;1702;1591;</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20200309162718_haolaoshi.cs" />
+    <Compile Remove="Migrations\20200309162718_haolaoshi.Designer.cs" />
+    <Compile Remove="Migrations\20200309164309_InitialCreate.cs" />
+    <Compile Remove="Migrations\20200309164309_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20200310110830_haolaoshi1.cs" />
+    <Compile Remove="Migrations\20200310110830_haolaoshi1.Designer.cs" />
+    <Compile Remove="Migrations\20200310114018_haolaoshi2.cs" />
+    <Compile Remove="Migrations\20200310114018_haolaoshi2.Designer.cs" />
+    <Compile Remove="Migrations\20200313131320_haolaoshi2.cs" />
+    <Compile Remove="Migrations\20200313131320_haolaoshi2.Designer.cs" />
+    <Compile Remove="Migrations\20200313132254_haolaoshi3.cs" />
+    <Compile Remove="Migrations\20200313132254_haolaoshi3.Designer.cs" />
+    <Compile Remove="Migrations\20200313132428_haolaoshi2.cs" />
+    <Compile Remove="Migrations\20200313132428_haolaoshi2.Designer.cs" />
+    <Compile Remove="Migrations\20200315050113_haolaoshi3.cs" />
+    <Compile Remove="Migrations\20200315050113_haolaoshi3.Designer.cs" />
+    <Compile Remove="Migrations\20200315050227_haolaoshi41.cs" />
+    <Compile Remove="Migrations\20200315050227_haolaoshi41.Designer.cs" />
+    <Compile Remove="Migrations\20200315050359_haolaoshi42.cs" />
+    <Compile Remove="Migrations\20200315050359_haolaoshi42.Designer.cs" />
+    <Compile Remove="Migrations\20200315050903_haolaoshi3.cs" />
+    <Compile Remove="Migrations\20200315050903_haolaoshi3.Designer.cs" />
+    <Compile Remove="Migrations\20200315051947_haolaoshi4.cs" />
+    <Compile Remove="Migrations\20200315051947_haolaoshi4.Designer.cs" />
+    <Compile Remove="Migrations\20200402041624_haolaoshi7.cs" />
+    <Compile Remove="Migrations\20200402041624_haolaoshi7.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="3.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj" />
+  </ItemGroup>
+
+</Project>
